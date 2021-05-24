@@ -1,0 +1,33 @@
+{
+    "name": "melvinachterhuis/sticky-cart-shopware6-plugin",
+    "description": "Sticky cart on the product page",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Melvin Achterhuis"
+        }
+    ],
+    "require": {
+        "shopware/core": "6.4.*",
+        "shopware/storefront": "6.4.*",
+        "shopware/administration": "6.4.*"
+    },
+    "type": "shopware-platform-plugin",
+    "autoload": {
+        "psr-4": {
+            "Melv\\StickyCart\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "Melv\\StickyCart\\MelvStickyCart",
+        "label": {
+            "de-DE": "Klebriger Warenkorb",
+            "en-GB": "Sticky cart"
+        },
+        "description": {
+            "de-DE": "Klebriger Warenkorb auf der Produktseite",
+            "en-GB": "Sticky cart on the product page"
+        }
+    }
+}

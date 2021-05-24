@@ -1,0 +1,28 @@
+{% block melv_sticky_cart %}
+    <div class="sticky-cart">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-6">
+                    <a class="h2 mb-3 d-block d-md-none collapse-configurator" data-toggle="collapse" href="#collapseConfigurator" role="button" aria-expanded="false" aria-controls="collapseConfigurator">
+                        <span class="show-more">{{ 'ellipsis.expandLabel'|trans|sw_sanitize|capitalize }}</span>
+                        <span class="show-less">{{ 'ellipsis.shrinkLabel'|trans|sw_sanitize|capitalize }}</span>
+                    </a>
+                    {% if page.product.parentId and page.configuratorSettings|length > 0 %}
+                        <div class="collapse d-md-block" id="collapseConfigurator">
+                            <div class="product-detail-configurator-container mb-2">
+                                {% sw_include '@Storefront/storefront/page/product-detail/configurator.html.twig' %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    {% if page.product.active %}
+                        <div class="product-detail-form-container">
+                            {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-form.html.twig' %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

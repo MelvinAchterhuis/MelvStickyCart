@@ -1,0 +1,8 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_footer %}
+    {{ parent() }}
+    {% if (controllerName|lower == 'product') and config('MelvStickyCart.config.active') %}
+        {% sw_include '@MelvStickyCart/plugin/melv-sticky-cart.html.twig' %}
+    {% endif %}
+{% endblock %}
